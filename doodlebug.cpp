@@ -118,11 +118,11 @@ public:
 
     ~World()
     {
-        for (int r = 0; r < size; r++)
+        for (int x = 0; x < size; x++)
         {
-            for (int c = 0; c < size; c++)
+            for (int y = 0; y < size; y++)
             {
-                delete grid[r][c];
+                delete grid[x][y];
             }
         }
     }
@@ -269,12 +269,12 @@ public:
     friend ostream &operator<<(ostream &os, const World &w)
     {
         os << "World at iteration " << (w.age + 1) << ":\n";
-        for (int r = 0; r < w.size; r++)
+        for (int x = 0; x < w.size; x++)
         {
-            for (int c = 0; c < w.size; c++)
+            for (int y = 0; y < w.size; y++)
             {
-                if (w.grid[r][c])
-                    os << w.grid[r][c] << ' ';
+                if (w.grid[x][y])
+                    os << w.grid[x][y] << ' ';
                 else
                     os << "- ";
             }
